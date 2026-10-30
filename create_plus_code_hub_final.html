@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CREATE+ Code Hub: beginner-friendly guides and copy-ready programming examples for students.">
+<title>CREATE+ | Code Hub</title>
+<style>
+:root{
+  --navy:#071a3d;--navy2:#102b58;--blue:#2457d6;--cyan:#42d9f5;
+  --orange:#ff7a24;--yellow:#ffd447;--paper:#f4f7ff;--ink:#15233b;
+  --muted:#64728a;--white:#fff;--line:#dce5f3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit}
+.hero{
+  color:white;padding:22px 18px 66px;position:relative;overflow:hidden;
+  background:radial-gradient(circle at 85% 15%,#2457d6 0,transparent 28%),
+  linear-gradient(130deg,var(--navy),#0b2852 65%,#123c78);
+  border-bottom:7px solid var(--orange)
+}
+.hero:before,.hero:after{content:"";position:absolute;border:2px solid #42d9f555;transform:rotate(45deg);pointer-events:none}
+.hero:before{width:180px;height:180px;right:-55px;top:45px}
+.hero:after{width:95px;height:95px;left:-48px;bottom:8px;border-color:#ffd44788}
+.nav{max-width:1080px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
+.brand{font-weight:900;letter-spacing:1px}.brand span{color:var(--orange)}
+.nav a{text-decoration:none;color:#dceaff;font-size:.9rem;margin-left:16px}
+.hero-inner{max-width:1080px;margin:58px auto 0;position:relative;z-index:1}
+.eyebrow{color:var(--cyan);font-size:.82rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(3.2rem,10vw,6.2rem);line-height:.95;margin:12px 0}
+h1 span{color:var(--orange)}
+.hero p{max-width:650px;color:#e1eaff;font-size:1.08rem;margin:18px 0 25px}
+.tagline{font-weight:900;letter-spacing:1.5px;color:var(--yellow)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;text-decoration:none;border-radius:9px;padding:12px 18px;font-weight:800}
+.primary{background:var(--yellow);color:var(--navy)}
+.secondary{border:1px solid #ffffff88;color:white}
+main{max-width:1080px;margin:auto;padding:38px 18px 70px}
+.section-head{margin-bottom:20px}
+.kicker{color:var(--blue);font-size:.78rem;font-weight:900;letter-spacing:1.7px;text-transform:uppercase}
+h2{font-size:clamp(1.65rem,4vw,2.25rem);color:var(--navy);line-height:1.15;margin:5px 0 8px}
+.lead{color:var(--muted);max-width:720px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{background:white;border:1px solid var(--line);border-radius:16px;padding:21px;box-shadow:0 8px 24px #071a3d0b}
+.card h3{margin:4px 0 7px;color:var(--navy);font-size:1.2rem}
+.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#e8f6ff;color:var(--blue);font-size:1.35rem;font-weight:900}
+.card p{color:var(--muted);margin:0}
+.pill{display:inline-block;border-radius:30px;padding:4px 10px;background:#fff1df;color:#98430c;font-size:.73rem;font-weight:900;letter-spacing:.4px}
+.learn{margin-top:42px}
+.snippet{margin-top:17px;background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px #071a3d0b}
+.snippet-top{padding:17px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.snippet-top h3{margin:0;color:var(--navy)}
+.snippet-top p{margin:3px 0 0;color:var(--muted);font-size:.92rem}
+.copy{border:0;border-radius:8px;background:var(--blue);color:white;padding:10px 14px;font-weight:800;cursor:pointer}
+.copy:hover{background:var(--navy)}
+pre{margin:0;background:#071326;color:#eaf3ff;padding:19px 20px;overflow:auto;font-size:.9rem;line-height:1.55}
+code{font-family:Consolas,"Courier New",monospace}
+.tip{margin-top:20px;padding:17px 19px;border-left:5px solid var(--orange);background:#fff7e8;border-radius:10px;color:#60421f}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:18px}
+.step{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}
+.num{font-size:1.4rem;font-weight:900;color:var(--orange)}
+.step h3{margin:3px 0;color:var(--navy)}
+.step p{margin:0;color:var(--muted);font-size:.94rem}
+footer{background:var(--navy);color:#d9e6ff;text-align:center;padding:26px 16px}
+footer strong{color:var(--yellow)}
+@media(max-width:700px){.grid,.steps{grid-template-columns:1fr}.nav nav{display:none}.hero-inner{margin-top:42px}.snippet-top{align-items:flex-start}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="nav">
+    <div class="brand">CREATE<span>+</span> CODE HUB</div>
+    <nav><a href="#about">About</a><a href="#languages">Explore</a><a href="#examples">Code examples</a></nav>
+  </div>
+  <div class="hero-inner">
+    <div class="eyebrow">Kalayaan National High School • Digital Skills</div>
+    <h1>CREATE<span>+</span><br>CODE HUB</h1>
+    <div class="tagline">IMAGINE IT. DESIGN IT. CREATE IT.</div>
+    <p>A beginner-friendly space to discover programming, understand how websites work, and try simple code examples. Start small, practise, and turn your ideas into digital creations.</p>
+    <div class="actions">
+      <a class="btn primary" href="#examples">Explore code examples ↓</a>
+      <a class="btn secondary" href="#about">Learn what coding is</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="section-head">
+      <div class="kicker">Welcome to CREATE+</div>
+      <h2>What is coding?</h2>
+      <p class="lead">Coding is the process of writing instructions that tell a computer what to do. People use code to build websites, create apps, solve problems, and make digital tools.</p>
+    </div>
+    <div class="tip"><strong>Beginner tip:</strong> You do not need to memorise everything. Read each example, copy it, try it in a suitable editor, and change small parts to see what happens.</div>
+  </section>
+
+  <section id="languages" class="learn">
+    <div class="section-head">
+      <div class="kicker">Explore the basics</div>
+      <h2>Four things you can learn</h2>
+      <p class="lead">Each language or tool has a different role in creating digital projects.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="icon">&lt;/&gt;</div><h3>HTML</h3><span class="pill">WEB STRUCTURE</span><p>HTML gives a webpage its structure. It adds headings, paragraphs, images, links, and other content.</p></article>
+      <article class="card"><div class="icon">✦</div><h3>CSS</h3><span class="pill">WEB DESIGN</span><p>CSS controls how a webpage looks, including colours, fonts, spacing, borders, and layout.</p></article>
+      <article class="card"><div class="icon">JS</div><h3>JavaScript</h3><span class="pill">INTERACTION</span><p>JavaScript makes webpages interactive. It can respond to button clicks and update page content.</p></article>
+      <article class="card"><div class="icon">Py</div><h3>Python</h3><span class="pill">PROGRAMMING</span><p>Python is a beginner-friendly programming language used for problem-solving, automation, data, and many other projects.</p></article>
+    </div>
+  </section>
+
+  <section id="examples" class="learn">
+    <div class="section-head">
+      <div class="kicker">Try it yourself</div>
+      <h2>Ready-to-copy code examples</h2>
+      <p class="lead">Press the Copy Code button, then paste the example into an editor that supports that language.</p>
+    </div>
+
+    <article class="snippet">
+      <div class="snippet-top"><div><span class="pill">HTML</span><h3>1. Make a simple webpage</h3><p>Creates a page with a title, heading, and short paragraph.</p></div><button class="copy" onclick="copyCode('code-html',this)">Copy Code</button></div>
+      <pre><code id="code-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;p&gt;I am learning to create websites.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </article>
+
+    <article class="snippet">
+      <div class="snippet-top"><div><span class="pill">CSS</span><h3>2. Add style to a webpage</h3><p>Changes the background, text colour, and font.</p></div><button class="copy" onclick="copyCode('code-css',this)">Copy Code</button></div>
+      <pre><code id="code-css">body {
+  background-color: #071a3d;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}</code></pre>
+    </article>
+
+    <article class="snippet">
+      <div class="snippet-top"><div><span class="pill">JAVASCRIPT</span><h3>3. Show a welcome message</h3><p>Displays a pop-up message when the function is called.</p></div><button class="copy" onclick="copyCode('code-js',this)">Copy Code</button></div>
+      <pre><code id="code-js">function showMessage() {
+  alert("Welcome to CREATE+!");
+}
+
+showMessage();</code></pre>
+    </article>
+
+    <article class="snippet">
+      <div class="snippet-top"><div><span class="pill">PYTHON</span><h3>4. Print your first message</h3><p>Displays two lines of text in the program output.</p></div><button class="copy" onclick="copyCode('code-python',this)">Copy Code</button></div>
+      <pre><code id="code-python">print("Hello, CREATE+!")
+print("I am learning Python.")</code></pre>
+    </article>
+  </section>
+
+  <section class="learn">
+    <div class="section-head">
+      <div class="kicker">Your first steps</div>
+      <h2>How to practise</h2>
+      <p class="lead">Follow these simple steps as you explore the examples.</p>
+    </div>
+    <div class="steps">
+      <article class="step"><div class="num">01</div><h3>Choose</h3><p>Select a code example and read what it does.</p></article>
+      <article class="step"><div class="num">02</div><h3>Copy</h3><p>Press Copy Code and paste it into a suitable coding editor.</p></article>
+      <article class="step"><div class="num">03</div><h3>Experiment</h3><p>Change a word or value, run the code, and observe the result.</p></article>
+    </div>
+    <div class="tip"><strong>Remember:</strong> HTML, CSS, and JavaScript work together to build websites. Python is a separate language and needs a Python editor or interpreter to run.</div>
+  </section>
+</main>
+
+<footer><strong>CREATE+</strong> • Learn • Create • Grow<br>Kalayaan National High School<br><small>IMAGINE IT. DESIGN IT. CREATE IT.</small></footer>
+
+<script>
+async function copyCode(id, button) {
+  const code = document.getElementById(id).innerText;
+  try {
+    await navigator.clipboard.writeText(code);
+    const original = button.innerText;
+    button.innerText = "Copied!";
+    setTimeout(() => button.innerText = original, 1400);
+  } catch (err) {
+    const range = document.createRange();
+    range.selectNodeContents(document.getElementById(id));
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    button.innerText = "Select and copy";
+  }
+}
+</script>
+</body>
+</html>
